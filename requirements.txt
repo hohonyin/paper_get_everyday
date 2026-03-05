@@ -1,2 +1,2 @@
 google-generativeai
-arxiv
+arxiv==2.1.0
