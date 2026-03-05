@@ -26,8 +26,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run paper summarizer
+    - name: Run script
       env:
-        # 将 GitHub Secrets 中的密钥注入环境变量
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      run: python main.py
+      run: python get_papers.py
+
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        # SMTP 服务器地址 (QQ用 smtp.qq.com, Gmail用 smtp.gmail.com)
+        server_address: smtp.qq.com
+        server_port: 465
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        subject: "📅 ArXiv 论文日报 - ${{ bytes_to_human_readable(job.status) }} ${{ github.event.repository.updated_at }}"
+        to: ${{ secrets.MAIL_RECEIVER }}
+        from: "ArXiv Bot"
+        # 发送刚才生成的 report.md 内容
+        html_body: file://report.md
+        convert_markdown: true
