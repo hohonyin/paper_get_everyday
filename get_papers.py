@@ -83,5 +83,8 @@ def main():
     print(daily_report)
 
 if __name__ == "__main__":
+    # 假设你的结果变量叫 daily_report
+    # 在 main 最后添加：
+    with open("report.md", "w", encoding="utf-8") as f:
+        f.write(daily_report)
 
-    main()
