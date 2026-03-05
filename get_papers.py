@@ -1,9 +1,10 @@
 import arxiv
 import google.generativeai as genai
 import datetime
+import os
 
-# 配置部分：请在此处填入你的 Google Gemini API Key
-GOOGLE_API_KEY = "YOUR_API_KEY_HERE"
+# 修改这一行，优先从环境变量读取
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY") 
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 初始化 Gemini 模型，这里我们使用支持长文本的 flash 版本以平衡速度与成本
@@ -82,4 +83,5 @@ def main():
     print(daily_report)
 
 if __name__ == "__main__":
+
     main()
