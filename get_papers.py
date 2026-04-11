@@ -8,7 +8,7 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 初始化 Gemini 模型，这里我们使用支持长文本的 flash 版本以平衡速度与成本
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
 
 def get_latest_papers(topic="Large Language Models", max_results=3):
     """
