@@ -10,7 +10,7 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 设置话题列表
-TOPICS = ["state space model", "in context learning"]
+TOPICS = ["SSM", "In-context Learning"]
 # 每个话题获取的数量
 MAX_RESULTS_PER_TOPIC = 10
 # 每次请求 Gemini 后的暂停时间（秒）
