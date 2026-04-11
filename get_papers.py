@@ -65,7 +65,7 @@ def generate_summary(paper):
 def main():
     # 1. 获取论文
     # 你可以修改 topic 参数来关注不同的领域，例如 "Multimodal AI"
-    papers = get_latest_papers(topic="LLM", max_results=2)
+    papers = get_latest_papers(topic="SSM", max_results=5)
 
     daily_report = f"# 📅 AI 前沿论文日报 ({datetime.date.today()})\n\n"
 
