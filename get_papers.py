@@ -14,7 +14,7 @@ TOPICS = ["SSM", "In-context Learning"]
 # 每个话题获取的数量
 MAX_RESULTS_PER_TOPIC = 10
 # 每次请求 Gemini 后的暂停时间（秒）
-PAUSE_SECONDS = 5
+PAUSE_SECONDS = 60
 
 # 初始化模型 (建议使用 1.5-flash，兼容性最广)
 model = genai.GenerativeModel('gemini-3-flash-preview')
