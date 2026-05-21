@@ -17,7 +17,7 @@ MAX_RESULTS_PER_TOPIC = 10
 PAUSE_SECONDS = 60
 
 # 初始化模型 (建议使用 1.5-flash，兼容性最广)
-model = genai.GenerativeModel('gemini-3-flash-preview')
+model = genai.GenerativeModel('gemini-3.1-flash-lite')
 
 def get_latest_papers(topic, max_results):
     """
